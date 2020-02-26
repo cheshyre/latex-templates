@@ -1,23 +1,107 @@
-\documentclass{memoir}
+\documentclass[12pt]{memoir}
+
+\usepackage[letterpaper,left=3.0cm,right=2.5cm,top=3.0cm,bottom=3.0cm]{geometry}
 
 \usepackage{lmodern}
+% \usepackage{fontspec}
+% \setmainfont{Latin Modern}
+% \setsansfont{Source Sans Pro}
+% \setmathrm{Latin Modern}
+% \setmonofont{Consolas}
 
 % Remove this package
 \usepackage{lipsum}
 
+% acronyms
+% \usepackage{acronym}
+
 \usepackage{hyperref}
+
+% For license
+\usepackage[
+    type={CC},
+    modifier={by},
+    version={4.0},
+]{doclicense}
+
+\setsecnumdepth{subsubsection}
+\maxtocdepth{subsection}
 
 \begin{document}
 
-\title{A sample set of notes}
+\include{notes/macros}
 
-\author{Matthias Heinz}
+% \title{A sample set of notes}
+
+% \author{Matthias Heinz}
 \frontmatter
-\maketitle
+% \maketitle
+% \titlecustom{A sample set of notes}{Some subtitle}{Matthias Heinz}
+
+\begin{titlingpage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Uppsala University}\\[1.5cm] % Name of your university/college
+% \includegraphics[scale=.1]{Uppsala_University_seal_svg.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+% \textsc{\Large Course name}\\[0.5cm] % Major heading such as course name
+% \textsc{\large Course code}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Title}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Matthias \textsc{Heinz}\\ % Your name
+\end{flushleft}
+
+\end{minipage}\\[2cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlingpage}
+
+% Public abstract
 
 % abstract
 \chapter{Abstract}
 \lipsum[1]
+
+% License
+\chapter{License}
+\doclicenseThis{}
+
+% Dedication
+
+% Acknowledgements
+
+% Preface
 
 \cleardoublepage\tableofcontents
 
@@ -25,7 +109,14 @@
 
 \cleardoublepage\listoffigures
 
-\mainmatter
+% Uncomment for acronyms
+% use acronym in text with \ac{label} or \acl{label}
+% \cleardoublepage\include{notes/acronyms}
+
+% Can add list of symbols here
+% \cleardoublepage\include{notes/symbols}
+
+\mainmatter{}
 
 \chapter{Something}
 
@@ -45,11 +136,11 @@ There are no sub-headings beyond this.
 
 \section{A first section}
 
-\lipsum
+\lipsum{}
 
 \section{A second section}
 
-\lipsum
+\lipsum{}
 
 \chapter{A second chapter}
 \chapter{A second chapter}
@@ -57,37 +148,16 @@ There are no sub-headings beyond this.
 \chapter{A second chapter}
 \chapter{A second chapter}
 \chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
-\chapter{A second chapter}
 
-\backmatter
+\begin{appendices}
+  \chapter{Some appendix}
 
+\end{appendices}
+
+\backmatter{}
+
+\bibliographystyle{alpha} % use your favorite BIBTeX style
+\nocite{*} % To display all refs, even uncited refs (useful when editting)
+\bibliography{notes/notesbib}
 
 \end{document}

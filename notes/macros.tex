@@ -1,1 +1,16 @@
 % some macros here
+
+% Title
+\newcommand{\titlecustom}[3]{\begingroup% Misericords, T&H p 153
+\setlength\drop{0.08\textheight}
+\centering
+\vspace*{\drop}
+{\Huge\bfseries #1}\\[\baselineskip]
+{\scshape #2}\\[\baselineskip]
+\vfill
+{\large\scshape #3}\par
+\vfill
+{\scshape \@date}\par
+\vspace*{2\drop}
+\endgroup}
+\makeatother
